@@ -1,0 +1,23 @@
+{
+  "name": "fddw2021_database",
+  "version": "1.0.0",
+  "description": "datenhaltung fuer das fddw projekt",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastianbroc/fddw2021_database.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebastianbroc/fddw2021_database/issues"
+  },
+  "homepage": "https://github.com/sebastianbroc/fddw2021_database#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
