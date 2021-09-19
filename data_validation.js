@@ -59,13 +59,13 @@ const getStationsLatest = (path) => {
     let array = JSON.parse(fs.readFileSync(path,'utf8'));
     let unique = JSON.parse(getAllStations(path));
 
-    let response = {};
+    let response = [];
 
     let i = 0;
     unique.forEach(element => {
         array.forEach(data => {
             if(element == data.place){
-                response[i] = data;
+                response.push(data);
             }
         })
         i++;
