@@ -60,11 +60,12 @@ const getStationsLatest = (path) => {
     let unique = JSON.parse(getAllStations(path));
 
     let response = [];
+    let tobepushed = {};
 
     unique.forEach(element => {
         array.forEach(data => {
             if(element == data.place){
-                let tobepushed = data;
+                tobepushed = data;
             }
         })
         response.push(tobepushed);
