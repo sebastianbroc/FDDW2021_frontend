@@ -1,7 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-const cookieParser = require("cookie-parser");
-const sessions = require('express-session');
 const bodyParser = require("body-parser");
 const validator = require('./data_validation.js');
 const stats = require('./statistics')
