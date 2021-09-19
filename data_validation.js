@@ -61,14 +61,13 @@ const getStationsLatest = (path) => {
 
     let response = [];
 
-    let i = 0;
     unique.forEach(element => {
         array.forEach(data => {
             if(element == data.place){
-                response.push(data);
+                let tobepushed = data;
             }
         })
-        i++;
+        response.push(tobepushed);
     })
 
     return (JSON.stringify(response));
