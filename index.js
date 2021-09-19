@@ -34,11 +34,17 @@ app.get('/getweek', (req, res) => {
     res.send(stats.getLastWeek('weatherdb.json'));
 })
 app.post('/weather', (req, res) => {
-    console.log(req.body);
-    res.sendStatus(200);
+    
     
     validator.addObject('weatherdb.json', req.body.temperature, req.body.humidity, req.body.pressure, req.body.place, req.body.day, req.body.month, req.body.year, req.body.hour, req.body.minute, (err, res) => {
-        console.log(res);
+        if(res){
+            console.log(res);
+            res.sendStatus(200);
+        } else if (err){
+            res.sendStatus(500);
+            res.send('The data got rejected because it was possibly wrong!');
+        }
+        
     });
     
 })
