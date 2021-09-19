@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+const cookieParser = require("cookie-parser");
+const sessions = require('express-session');
 const bodyParser = require("body-parser");
 const validator = require('./data_validation.js');
 const stats = require('./statistics')
@@ -22,6 +24,9 @@ app.get('/getcurrent', (req, res) => {
 })
 app.get('/getplace', (req, res) => {
     res.send(validator.getPlace('weatherdb.json'));
+})
+app.get('/getstations', (req, res) => {
+    res.send(validator.getAllStations('weatherdb.json'));
 })
 app.get('/getdate', (req, res) => {
     res.send(validator.getDate('weatherdb.json'));

@@ -41,6 +41,20 @@ const getPlace = (path) => {
     return (array[array.length-1].place);
 }
 
+const getAllStations = (path) => {
+    let array = JSON.parse(fs.readFileSync(path,'utf8'));
+    let places = [];
+    
+    let i = 0;
+    array.forEach(element => {
+        places[i] = element.place;
+        i++;
+    })
+    let unique = places.filter((value, index) => places.indexOf(value) === index); //This is an array of all locations of weather stations without duplicates.
+
+    return (JSON.stringify(unique));
+}
+
 const getDate = (path) => {
     let array = JSON.parse(fs.readFileSync(path,'utf8'));
 
@@ -59,3 +73,4 @@ module.exports.addObject = addObject;
 module.exports.getLatestData = getLatestData;
 module.exports.getPlace = getPlace;
 module.exports.getDate = getDate;
+module.exports.getAllStations = getAllStations;
