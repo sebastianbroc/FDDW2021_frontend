@@ -108,5 +108,16 @@
        "year":"2021",
        "hour":"5",
        "minute":"0"
-    }
+    },
+    {
+      "temperature":"99",
+      "humidity":"99",
+      "pressure":"99",
+      "place":"Bielstein+Germany",
+      "day":"19",
+      "month":"9",
+      "year":"2021",
+      "hour":"15",
+      "minute":"0"
+   }
  ]
