@@ -4,7 +4,7 @@ const fs = require('fs');
 const addObject = (path, temperature, humidity, pressure, place, day, month, year, hour, minute, callback) => {
     let array = JSON.parse(fs.readFileSync(path,'utf8',callback));
 
-    if(!(parseInt(temperature) < 60) && !(parseInt(temperature) > -80)){
+    if((parseInt(temperature) < 60) && (parseInt(temperature) > -80)){
         let newentry = {};
         newentry.temperature = temperature;
         newentry.humidity = humidity;
