@@ -26,6 +26,9 @@ app.get('/getplace', (req, res) => {
 app.get('/getstations', (req, res) => {
     res.send(validator.getAllStations('weatherdb.json'));
 })
+app.get('/getstationslatest', (req, res) => {
+    res.send(validator.getStationsLatest('weatherdb.json'));
+})
 app.get('/getdate', (req, res) => {
     res.send(validator.getDate('weatherdb.json'));
 })

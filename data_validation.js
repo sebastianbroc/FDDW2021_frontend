@@ -55,6 +55,25 @@ const getAllStations = (path) => {
     return (JSON.stringify(unique));
 }
 
+const getStationsLatest = (path) => {
+    let array = JSON.parse(fs.readFileSync(path,'utf8'));
+    let unique = JSON.parse(getAllStations(path));
+
+    let response = {};
+
+    let i = 0;
+    unique.forEach(element => {
+        array.forEach(data => {
+            if(element == data.place){
+                response[i] = data;
+            }
+        })
+        i++;
+    })
+
+    return (JSON.stringify(response));
+}
+
 const getDate = (path) => {
     let array = JSON.parse(fs.readFileSync(path,'utf8'));
 
@@ -74,3 +93,4 @@ module.exports.getLatestData = getLatestData;
 module.exports.getPlace = getPlace;
 module.exports.getDate = getDate;
 module.exports.getAllStations = getAllStations;
+module.exports.getStationsLatest = getStationsLatest;
