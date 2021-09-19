@@ -37,16 +37,7 @@ app.post('/weather', (req, res) => {
     
     
     validator.addObject('weatherdb.json', req.body.temperature, req.body.humidity, req.body.pressure, req.body.place, req.body.day, req.body.month, req.body.year, req.body.hour, req.body.minute, (err, res) => {
-        if(res != null){
-            console.log(res);
-            res.send('data has successfully been added!')
-            res.sendStatus(200);
-            break
-        } else if (err != null){
-            res.send('The data got rejected because it was possibly wrong!');
-            res.sendStatus(500);
-            break
-        }
+
     });
     
 })
