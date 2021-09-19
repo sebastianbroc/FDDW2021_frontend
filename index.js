@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require("body-parser");
 const validator = require('./data_validation.js');
 const stats = require('./statistics')
 
@@ -7,6 +8,10 @@ const app = express();
 app.use(cors({
     origin: '*'
 }));
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 const port = process.env.PORT || 3000
 
 app.get('/getcurrent', (req, res) => {
