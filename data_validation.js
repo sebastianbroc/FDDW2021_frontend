@@ -24,8 +24,6 @@ const addObject = (path, temperature, humidity, pressure, place, day, month, yea
     } else {
         return callback("could not add data to database! data was possibly wrong", null);
     }
-
-    
 }
 
 const getLatestData = (path) => {
